@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        #data{
+            display: grid;
+            grid-template-columns: 3fr 3fr;
+            width: 75%;
+            /* border: 1px solid green; */
+            padding: 20px;
+        }
+        #right_2>h2{
+            color: red;
+        }
+        #right_1>h1{
+            color: gray;
+        }
+        #right button{
+            background-color: rgb(65, 236, 65);
+            padding: 1rem;
+            border-radius: 10px;
+            color: white;
+        }
+        #right button:hover{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- top icon div -->
+    <div class="top_icon">
+        <div>Ships to:</div>
+        <div class="top_image"><a href=""><img src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif"></a></div>
+        <div>INDIA</div>
+    </div>
+
+    <!-- after top like:-search bar,Account,cart etc -->
+    <div id="stick_1">
+        <div class="overstock">
+            <div>OVERSTOCK</div>
+            <div><input type="text" placeholder="Search your product" size="100">
+            <button>Search</button></div>
+            <div>
+                <div><a href="signup_login.html">Account</a></div>
+                <div><a href="">Lists</a></div>
+                <div><a href="my_product_cart.html">Cart</a></div>
+            </div>
+        </div>
+    
+        <!-- menu bar /nav bar -->
+    
+        <div class="nav_bar">
+            <div>
+                <div><a href="">Furniture</a></div>
+                <div><a href="">Rugs</a></div>
+                <div><a href="">Decor</a></div>
+                <div><a href="">Bed & Bath</a></div>
+                <div><a href="">Home Improvement</a></div>
+                <div><a href="">Kitchen</a></div>
+                <div><a href="">Outdoor</a></div>
+                <div><a href="">Jewelry</a></div>
+                <div><a href="">Lighting</a></div>
+                <div><a href="">Kids & Baby</a></div>
+                <div><a href="">More</a></div>
+            </div>
+    
+            <div>
+                <div><a href="">Ideas</a></div>
+                <div><a href="">Sales & Deals</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="data">
+        <div id="left">
+            <img alt="" id="image_show">
+        </div>
+        <div id="right">
+            <div id="right_1"></div>
+            <div id="right_2"></div>
+            <button onclick="Add_to_cart()">ADD TO CART</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    
+    function all()
+    {
+        var product_name=JSON.parse(localStorage.getItem("view_porduct_name"));
+        var product_image=JSON.parse(localStorage.getItem("view_porduct_image"));
+        var product_price=JSON.parse(localStorage.getItem("view_porduct_price"));
+        document.getElementById("image_show").src=product_image;
+        document.getElementById("right_1").innerHTML=`<h1>${product_name}</h1>`;
+        document.getElementById("right_2").innerHTML=`<h2> INR ${product_price}</h2>`;
+
+    }
+    all();
+
+    //var cart_product=[];
+
+    if(localStorage.getItem("product_item")===null)
+    {
+      localStorage.setItem("product_item",JSON.stringify([]));
+    }
+    cart_product=JSON.parse(localStorage.getItem("product_item"));//got in array formate
+    console.log(cart_product);
+    function Add_to_cart()
+    {
+        let check_out_product={
+            name:JSON.parse(localStorage.getItem("view_porduct_name")),
+            price:JSON.parse(localStorage.getItem("view_porduct_price")),
+            image:JSON.parse(localStorage.getItem("view_porduct_image")),
+        };
+        console.log("data",check_out_product);
+        //cart_product.push(check_out_product);
+        var flag=0;
+        for(var i=0;i<cart_product.length;i++)
+        {
+            if(cart_product[i].name==check_out_product.name && cart_product[i].price==check_out_product.price)
+            {
+                flag=1
+            }
+        }
+        if(flag==1)
+        {
+            alert("product Already in cart");
+        }
+        else
+        {
+            cart_product.push(check_out_product);
+            alert("product added");
+        }
+        localStorage.setItem("product_item",JSON.stringify(cart_product));
+    }
+     //localStorage.setItem("product_item",JSON.stringify(cart_product));
+     console.log(cart_product);
+</script>

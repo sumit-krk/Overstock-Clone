@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sign_up and login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="signup_login">
+        <div>
+            <h1>Create Account</h1>
+            <!-- Email -->
+            <div>
+                <label>Email Address*</label>
+                <div>
+                    <input type="text" placeholder="Email" id="email">
+                </div>
+            </div>
+
+            <!-- password -->
+            <div>
+                <label>Password*</label>
+           
+            <div>
+                <input type="text" placeholder="Password" id="password">
+            </div>
+            </div>
+            <!-- confirm password -->
+            <div>
+                    <label>Confirm-Password*</label>
+                <div>
+                        <input type="text" placeholder="confirm-password" id="conf-password">
+                 </div>
+            </div>
+            <button onclick="create_acc()">Create Account</button>
+        </div>
+
+        <div>
+
+
+            <h1>Sign-In</h1>
+            <!-- Email -->
+            <div>
+                <label>Email Address*</label>
+                <div>
+                    <input type="text" placeholder="Email" id="sign-mail">
+                </div>
+            </div>
+
+            <!-- password -->
+            <div>
+                <label>Password*</label>
+            <div>
+                <input type="text" placeholder="Password" id="sign-password">
+            </div>
+            </div>
+            <button onclick="sign_in()">Sign-In</button>
+        </div>
+        <div id="show_err">
+
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    var log_sin=[]
+    function create_acc()
+    {
+        let create_account={
+           email_1:document.getElementById("email").value,
+           pass_1:document.getElementById("password").value,
+           conf_pass:document.getElementById("conf-password").value,
+        };
+        log_sin.push(create_account);
+        document.getElementById("email").value="";
+        document.getElementById("password").value="";
+        document.getElementById("conf-password").value="";
+        
+        let signup=JSON.stringify(log_sin);
+        localStorage.setItem("sign_up_acc",signup)
+        alert("Account created sucessfuly");
+    };
+
+    function sign_in()
+    {
+        let id_and_pas=JSON.parse(localStorage.getItem("sign_up_acc"));
+        console.log(id_and_pas);
+        email_2=document.getElementById("sign-mail").value;
+        pass_2=document.getElementById("sign-password").value;
+        var flag=0;
+        var flag_1=0;
+        for(var i=0;i<id_and_pas.length;i++)
+        {
+            console.log(id_and_pas[i]);
+            if(id_and_pas[i].email_1==email_2 && id_and_pas[i].pass_1==pass_2)
+            {
+                flag=1;
+                break;
+            }
+            // else if(id_and_pas[i].pass_1==pass_2)
+            // {
+            //     if(id_and_pas[i].email_1==email_2)
+            //     {
+            //         flag=1;
+            //         break;
+            //     }
+            //     else if(id_and_pas[i].email_1=email_2);
+            //     {
+            //         let show_err=document.getElementById("show_err");
+            //         show_err.innerHTML=`<b>Wrong Id / Password<b>`;
+            //     }  
+            // }
+        }
+        if(flag==1)
+        {
+            window.location.href="index.html";
+        }
+        else
+        {
+            alert("wrong id / password");
+        }
+    }
+</script>

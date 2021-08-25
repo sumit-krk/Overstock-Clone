@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cart-product</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- top icon div -->
+    <div class="top_icon">
+        <div>Ships to:</div>
+        <div class="top_image"><a href=""><img src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif"></a></div>
+        <div>INDIA</div>
+    </div>
+
+    <!-- after top like:-search bar,Account,cart etc -->
+    <div id="stick-2">
+        <div class="overstock">
+            <div>OVERSTOCK</div>
+            <div><input type="text" placeholder="Search your product" size="100">
+            <button>Search</button></div>
+            <div>
+                <div><a href="signup_login.html">Account</a></div>
+                <div><a href="">Lists</a></div>
+                <div><a href="my_product_cart.html">Cart</a></div>
+            </div>
+        </div>
+    
+        <!-- menu bar /nav bar -->
+    
+        <div class="nav_bar">
+            <div>
+                <div><a href="">Furniture</a></div>
+                <div><a href="">Rugs</a></div>
+                <div><a href="">Decor</a></div>
+                <div><a href="">Bed & Bath</a></div>
+                <div><a href="">Home Improvement</a></div>
+                <div><a href="">Kitchen</a></div>
+                <div><a href="">Outdoor</a></div>
+                <div><a href="">Jewelry</a></div>
+                <div><a href="">Lighting</a></div>
+                <div><a href="">Kids & Baby</a></div>
+                <div><a href="">More</a></div>
+            </div>
+    
+            <div>
+                <div><a href="">Ideas</a></div>
+                <div><a href="">Sales & Deals</a></div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <h1>Your cart item</h1>
+    <div id="cart_data">
+        <div id="our_product"></div>
+        <div id="product_information">
+            <div id="no_of_item">
+
+            </div>
+            <div id="total_price">
+                
+            </div>
+            <button>Check Out</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    let cart_data=JSON.parse(localStorage.getItem("product_item"));
+
+    var main_div=document.getElementById("our_product");
+
+    total=0;
+
+    cart_data.forEach(function(Product){
+
+    let div=document.createElement("div");
+
+
+    let p_name=document.createElement("p");
+    p_name.innerHTML=Product.name;
+
+    let p_price=document.createElement("p");
+    p_price.innerHTML=Product.price;
+
+    let P_image=document.createElement("img");
+    P_image.src=Product.image;
+
+    
+
+    div.append(P_image,p_name,p_price);
+    main_div.append(div);
+
+    total=total+Number(Product.price);
+});
+
+    var number_item=document.getElementById("no_of_item");
+    number_item.innerHTML=`Total item in cart:-${cart_data.length}`;
+    var total_price=document.getElementById("total_price");
+    total_price.innerHTML=`Total price of your cart is RS:-INR ${total}`;
+
+</script>
