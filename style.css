@@ -307,14 +307,14 @@ body{
 }
  #fina_product_details{
      width: 40rem;
-     border: 1px solid rgb(226, 93, 93);
+     /* border: 1px solid rgb(226, 93, 93); */
      margin: auto;
      margin-top: 1rem;
      text-align: center;
  }
  #payment{
      width: 60%;
-     border: 1px solid black;
+     /* border: 1px solid black; */
      margin: auto;
  }
  #payment_top{
@@ -381,7 +381,7 @@ body{
 .card_info{
     border: 1px solid gray;
     margin-top: 1rem;
-    padding: 1rem 0rem;
+    /* padding: 1rem 0rem; */
 }
 .card_info>div:first-child{
     background-color: beige;
@@ -391,4 +391,10 @@ body{
 .card_info>div:nth-child(3){
     /* border: 1px solid red; */
     width: 60%;
+}
+.card_info+a>button{
+    background-color: rgb(57, 247, 57);
+    padding: .5rem;
+    margin: .5rem 0rem;
+    margin-left: 39%;
 }
