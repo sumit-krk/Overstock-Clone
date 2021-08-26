@@ -73,12 +73,14 @@
         <div class="main_product_page">
             <div class="filtered">
                 <h1>Filtered By:</h1>
-                <label for="">Sort By Price</label>
+                <label>Sort By Price</label>
                 <select name="" id="price_filter">
                   <option value="">Select</option>
                   <option value="">High To Low</option>
                   <option value="">Low To High</option>
                 </select>
+
+                <button onclick="apply_changes()">Apply Changes</button>
             </div>
 
             <a href="detals_product.html" id="product_part">
@@ -235,8 +237,10 @@
   image: "https://ak1.ostkcdn.com/images/products/is/images/direct/b201588d6f9a6c521978464c3cad4e5fcdaceb42/SAFAVIEH-Monaco-Lillie-Boho-Medallion-Distressed-Rug.jpg?imwidth=480&impolicy=medium",
 },
 ];
+  
 
-    const furniture_json=JSON.stringify(furniture);
+
+    let furniture_json=JSON.stringify(furniture);
 
     localStorage.setItem("My_furniture",furniture_json);
 

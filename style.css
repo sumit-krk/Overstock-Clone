@@ -223,6 +223,19 @@ body{
     width: 100%;
     font-size: 1rem;
 }
+.filtered>button{
+    margin: auto;
+    border: 1px solid green;
+    margin-left: 3rem;
+    margin-top: 1rem;
+    background-color: orange;
+    padding: .3rem;
+    color: green;
+}
+.filtered>button:hover{
+    background-color: black;
+    color: white;
+}
 .filtered>h1{
     text-align: center;
     background-color: teal;
