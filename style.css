@@ -253,6 +253,9 @@ body{
     margin-left: .3rem;
     font-weight: bolder;
 }
+#product_part{
+    text-decoration: none;
+}
 #cart_data{
     display: grid;
     grid-template-columns: 9fr 3fr;
