@@ -76,7 +76,7 @@
             <div>
                 <label>Email Address*</label>
                 <div>
-                    <input type="text" placeholder="Email" id="email">
+                    <input type="email" placeholder="Email" id="email" required minlength="3" maxlength="50"> 
                 </div>
             </div>
 
@@ -85,14 +85,14 @@
                 <label>Password*</label>
            
             <div>
-                <input type="text" placeholder="Password" id="password">
+                <input type="text" placeholder="Password" id="password" required minlength="3">
             </div>
             </div>
             <!-- confirm password -->
             <div>
                     <label>Confirm-Password*</label>
                 <div>
-                        <input type="text" placeholder="confirm-password" id="conf-password">
+                        <input type="text" placeholder="confirm-password" id="conf-password" required minlength="3">
                  </div>
             </div>
             <button onclick="create_acc()">Create Account</button>
@@ -106,7 +106,7 @@
             <div>
                 <label>Email Address*</label>
                 <div>
-                    <input type="text" placeholder="Email" id="sign-mail">
+                    <input type="text" placeholder="Email" id="sign-mail" minlength="3">
                 </div>
             </div>
 
@@ -114,7 +114,7 @@
             <div>
                 <label>Password*</label>
             <div>
-                <input type="text" placeholder="Password" id="sign-password">
+                <input type="text" placeholder="Password" id="sign-password" required minlength="3">
             </div>
             </div>
             <button onclick="sign_in()">Sign-In</button>

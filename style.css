@@ -187,10 +187,9 @@ body{
     margin: auto;
     display: flex;
     justify-content: space-around;
+    font-size: 1rem;
 }
-.signup_login>div:first-child{
-    font-size: 1rem;;
-}
+
 .signup_login>div>div{
     margin-top: 1rem;
 }
@@ -209,9 +208,7 @@ body{
     height: 1.6rem;
     width: 11rem;
 }
-.signup_login>div:last-child{
-    font-size: 1rem;;
-}
+
 #stick+h1{
     font-size: 2rem;
     margin-left: 1rem;
@@ -224,11 +221,18 @@ body{
 .filtered{
     /* border: 1px solid green; */
     width: 100%;
+    font-size: 1rem;
 }
 .filtered>h1{
     text-align: center;
     background-color: teal;
-    padding: .6rem;
+    padding: .4rem;
+}
+#price_filter{
+    width: 100%;
+    height: 2rem;
+    border: 1px solid gray;
+    font-size: 1rem;
 }
 #product{
     display: grid;
