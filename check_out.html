@@ -10,9 +10,166 @@
     
 </head>
 <body>
-    <div id="fina_product_details">
-        <div id="total_items"></div>
-        <div id="total_price"></div>
+
+    <div id="payment">
+        <!-- paymetn top part -->
+        <div id="payment_top">
+            <div><h1>overstock</h1></div>
+            <div><p>You are using our secure server</p></div>
+        </div>
+        <hr>
+
+        <!-- fedex payment proton -->
+        <div id="fedex">
+            <div><img src="https://ak1.ostkcdn.com/img/mxc/20170922_fedexLogo.png"></div>
+            <div>Secure checkout provided by FedEx International.
+                Your order total includes customs and taxes, if applicable.</div>
+        </div>
+
+        <!-- back to cart -->
+        <div><a href="my_product_cart.html">Back to cart</a></div>
+
+        <!-- Address -->
+        <div id="address">
+            <!-- Billing Address -->
+            <div>
+               <div id="main_address"> <h3>Billing Address</h3></div>
+
+               <div class="adds">
+                   <label>Email<span>*</span></label>
+                   <input type="text">
+               </div>
+
+               <div class="adds">
+                <label>First Name<span>*</span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>Last Name<span>*</span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>Company<span></span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>Tax ID<span></span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>Address Line 1<span>*</span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>Address Line 2<span></span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>Country<span>*</span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>City<span>*</span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>State<span></span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>zIP Code<span>*</span></label>
+                <input type="text">
+            </div>
+
+            <div class="adds">
+                <label>Phone #<span>*</span></label>
+                <input type="text">
+            </div>
+            </div>
+
+            <!-- Shipping Address -->
+            <div>
+                <div>
+                    <div id="main_address"> <h3>Shipping Address</h3></div>
+     
+                    <div class="adds">
+                        <label>Email<span>*</span></label>
+                        <input type="text">
+                    </div>
+     
+                    <div class="adds">
+                     <label>First Name<span>*</span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>Last Name<span>*</span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>Company<span></span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>Tax ID<span></span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>Address Line 1<span>*</span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>Address Line 2<span></span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>Country<span>*</span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>City<span>*</span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>State<span></span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>zIP Code<span>*</span></label>
+                     <input type="text">
+                 </div>
+     
+                 <div class="adds">
+                     <label>Phone #<span>*</span></label>
+                     <input type="text">
+                 </div>
+                 </div>
+            </div>
+        </div>
+
+
+        <div id="fina_product_details">
+            <div id="total_items"></div>
+            <div id="total_price"></div>
+        </div>
+
     </div>
 
     <div>
@@ -29,5 +186,5 @@
     items.innerHTML=`<h1>Total Item In Cart - ${total_item.length}</h1>`;
 
     var price=document.getElementById("total_price");
-    price.innerHTML=`<h1>Total Cart Value - ${total_price}</h1>`;
+    price.innerHTML=`<h1>Total Cart Value - INR ${total_price}</h1>`;
 </script>

@@ -312,4 +312,66 @@ body{
      margin-top: 1rem;
      text-align: center;
  }
-
+ #payment{
+     width: 60%;
+     border: 1px solid black;
+     margin: auto;
+ }
+ #payment_top{
+     display: flex;
+     justify-content: space-around;
+     flex-direction: row;
+     align-items: center;
+     font-size: 1rem;
+ }
+#fedex{
+    width: 80%;
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+    font-size: 1rem;
+    grid-gap: 1rem;
+}
+#fedex>div:first-child{
+    width: 100%;
+}
+#fedex img{
+    width: 100%;
+}
+#fedex>div:last-child{
+}
+#payment>div:nth-child(4){
+    margin-top: 1rem;
+    font-size: 1rem;
+}
+#address{
+    display: grid;
+    grid-template-columns: 48% 48%;
+    grid-gap: 4%;
+}
+#address>div:first-child{
+    border: 1px solid gray;
+}
+#address>div:last-child{
+    border: 1px solid green
+}
+.adds{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    margin-top: 1rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+.adds>input{
+    width: 50%;
+    border: 1px solid black;
+    height: 1.3rem;
+}
+.adds span{
+    color: red;
+}
+#main_address{
+    background-color: beige;
+    padding: .1rem;
+    font-size: 1rem;
+}
