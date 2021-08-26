@@ -289,5 +289,11 @@ body{
     background-color: teal;
     color: black;
 }
-
+ #fina_product_details{
+     width: 40rem;
+     height: 10rem;
+     border: 1px solid red;
+     margin: auto;
+     margin-top: 1rem;
+ }
 
