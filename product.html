@@ -238,26 +238,7 @@
 },
 ];
 
-  var furniture_1=furniture;
-  function apply_changes()
-  {
-    var arr=document.getElementById("price_filter").value;
-    if(arr=="select")
-    {
-      furniture_1=furniture;
-      chk(furniture_1);
-    }
-    else if(arr=="HtoL")
-    {
-      furniture_1=furniture.sort(function(a,b){
-        return (a.price-b.price)
-      });
-    }
-    chk(furniture_1);
-
-  }
-
-    var furniture_json=JSON.stringify(furniture_1);
+    var furniture_json=JSON.stringify(furniture);
 
     localStorage.setItem("My_furniture",furniture_json);
 
@@ -301,6 +282,71 @@
         id++;
       })
     
+  function apply_changes()
+  {
+    var Myfurniture=localStorage.getItem("My_furniture");
+    document.getElementById("product").innerHTML="";
+    Myfurniture=JSON.parse(Myfurniture);
+    var furniture_1="";
+    var arr=document.getElementById("price_filter").value;
+    if(arr=="select")
+    {
+      furniture_1=Myfurniture;
+    }
+    else if(arr=="LtoH")
+    {
+      furniture_1=Myfurniture.sort(function(a,b){
+        return (a.price-b.price)
+      });
+    }
+
+    else if(arr=="HtoL")
+    {
+      furniture_1=Myfurniture.sort(function(b,a){
+        return (a.price-b.price)
+      });
+    }
+    
+    var main_div=document.getElementById("product");
+      var id=1;
+
+      furniture_1.forEach(function(Product){
+
+        let div=document.createElement("div");
+        //let a = document.createElement('a');
+        div.setAttribute("style","padding:.5rem");
+        div.setAttribute("class",`my_image`);
+
+
+        let p_name=document.createElement("p");
+        p_name.innerHTML=Product.name;
+        p_name.setAttribute("style","color:gray");
+
+        let p_price=document.createElement("p");
+        p_price.innerHTML=`INR ${Product.price}`;
+        p_price.setAttribute("style","color:red")
+
+        let P_image=document.createElement("img");
+        P_image.src=Product.image;
+
+        div.onclick=function(){
+          click_image(Product);
+        };
+       
+
+        div.append(P_image,p_price,p_name);
+
+        
+        main_div.append(div);
+
+       
+        id++;
+      })
+
+
+  }
+
+
     localStorage.setItem("view_product",JSON.stringify([]));
 
     var cart_product=JSON.parse(localStorage.getItem("view_product"));//got in array formate
