@@ -75,9 +75,9 @@
                 <h1>Filtered By:</h1>
                 <label>Sort By Price</label>
                 <select name="" id="price_filter">
-                  <option value="">Select</option>
-                  <option value="">High To Low</option>
-                  <option value="">Low To High</option>
+                  <option value="select">Select</option>
+                  <option value="HtoL">High To Low</option>
+                  <option value="LtoH">Low To High</option>
                 </select>
 
                 <button onclick="apply_changes()">Apply Changes</button>
@@ -92,7 +92,7 @@
 </body>
 </html>
 <script>
-    const furniture = [
+    var furniture = [
 
 {
   name: "SAFAVIEH Tulum Bora Moroccan Boho Rug",
@@ -237,19 +237,34 @@
   image: "https://ak1.ostkcdn.com/images/products/is/images/direct/b201588d6f9a6c521978464c3cad4e5fcdaceb42/SAFAVIEH-Monaco-Lillie-Boho-Medallion-Distressed-Rug.jpg?imwidth=480&impolicy=medium",
 },
 ];
-  
 
+  var furniture_1=furniture;
+  function apply_changes()
+  {
+    var arr=document.getElementById("price_filter").value;
+    if(arr=="select")
+    {
+      furniture_1=furniture;
+      chk(furniture_1);
+    }
+    else if(arr=="HtoL")
+    {
+      furniture_1=furniture.sort(function(a,b){
+        return (a.price-b.price)
+      });
+    }
+    chk(furniture_1);
 
-    let furniture_json=JSON.stringify(furniture);
+  }
+
+    var furniture_json=JSON.stringify(furniture_1);
 
     localStorage.setItem("My_furniture",furniture_json);
 
-    let Myfurniture=localStorage.getItem("My_furniture");
+    var Myfurniture=localStorage.getItem("My_furniture");
 
     Myfurniture=JSON.parse(Myfurniture);
 
-    function show_product()
-    {
       var main_div=document.getElementById("product");
       var id=1;
 
@@ -285,9 +300,7 @@
        
         id++;
       })
-    }
-    show_product();
-
+    
     localStorage.setItem("view_product",JSON.stringify([]));
 
     var cart_product=JSON.parse(localStorage.getItem("view_product"));//got in array formate
