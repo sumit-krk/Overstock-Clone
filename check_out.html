@@ -71,7 +71,8 @@
 
 
     <div id="fina_product_details">
-
+        <div id="total_items"></div>
+        <div id="total_price"></div>
     </div>
 
     <div>
@@ -80,3 +81,13 @@
     </div>
 </body>
 </html>
+<script>
+    let total_price=JSON.parse(localStorage.getItem("total_price"));
+    let total_item=JSON.parse(localStorage.getItem("product_item"));
+    
+    var items=document.getElementById("total_items");
+    items.innerHTML=`<h1>Total Item In Cart - ${total_item.length}</h1>`;
+
+    var price=document.getElementById("total_price");
+    price.innerHTML=`<h1>Total Cart Value - ${total_price}</h1>`;
+</script>

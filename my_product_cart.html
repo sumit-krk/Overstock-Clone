@@ -122,4 +122,7 @@
     var total_price=document.getElementById("total_price");
     total_price.innerHTML=`Total price of your cart is RS:-INR ${total}`;
 
+    localStorage.setItem("total_price",JSON.stringify(total));
+
+
 </script>

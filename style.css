@@ -307,9 +307,9 @@ body{
 }
  #fina_product_details{
      width: 40rem;
-     height: 10rem;
-     border: 1px solid red;
+     border: 1px solid rgb(226, 93, 93);
      margin: auto;
      margin-top: 1rem;
+     text-align: center;
  }
 
