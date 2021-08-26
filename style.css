@@ -57,12 +57,22 @@ body{
     align-items: center;
     margin: auto;
 }
+
+.overstock>div:last-child>div{
+    text-align: center;
+    font-size: 1rem;
+    /* border: 2px solid red; */
+}
 .overstock>div:nth-child(2)>input{
     /* width: 50rem;  */
     height: 2rem;
 }
 .overstock>div:nth-child(2)>button{
     height: 2.4rem;
+    width: 3rem;
+    background-color: rgb(247, 51, 51);
+    color: white;
+    font-size: 1rem;
 }
 .overstock a{
     text-decoration: none;
