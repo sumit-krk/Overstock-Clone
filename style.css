@@ -352,7 +352,7 @@ body{
     border: 1px solid gray;
 }
 #address>div:last-child{
-    border: 1px solid green
+    border: 1px solid gray;
 }
 .adds{
     display: flex;
@@ -374,4 +374,21 @@ body{
     background-color: beige;
     padding: .1rem;
     font-size: 1rem;
+}
+#p_icon{
+    display: flex;
+}
+.card_info{
+    border: 1px solid gray;
+    margin-top: 1rem;
+    padding: 1rem 0rem;
+}
+.card_info>div:first-child{
+    background-color: beige;
+    font-size: 1rem;
+    padding: .5rem;
+}
+.card_info>div:nth-child(3){
+    /* border: 1px solid red; */
+    width: 60%;
 }
