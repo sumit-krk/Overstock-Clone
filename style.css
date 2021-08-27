@@ -198,6 +198,23 @@ body{
     text-align: center;
     font-size: 2rem;
 }
+#footer{
+    display: flex;
+    background-color: gray;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+#footer>div{
+    /*  border: 1px solid green; */
+    width: 20%;
+    margin: auto;
+}
+
+#footer>div div{
+    font-size: .8rem;
+    margin-top: 1rem;
+    color: white;
+}
 
 .signup_login{
     width: 40rem;
