@@ -89,15 +89,17 @@
 </body>
 </html>
 <script>
+
     let cart_data=JSON.parse(localStorage.getItem("product_item"));
 
     var main_div=document.getElementById("our_product");
 
     total=0;
-
+    var id=1;
     cart_data.forEach(function(Product){
 
     let div=document.createElement("div");
+    div.setAttribute("id",`div${id}`);
 
 
     let p_name=document.createElement("p");
@@ -109,20 +111,38 @@
     let P_image=document.createElement("img");
     P_image.src=Product.image;
 
-    
+    let btn=document.createElement("button");
+    btn.innerHTML="Remove"
+    btn.setAttribute("id",`remove${id}`);
+    btn.setAttribute("onclick",`remove(${id})`);
 
-    div.append(P_image,p_name,p_price);
+    div.append(P_image,p_name,p_price,btn);
     main_div.append(div);
 
     total=total+Number(Product.price);
+    id++;
 });
 
+
+function remove(id)
+    {
+        var div=document.getElementById(`div${id}`);
+        let cart_data=JSON.parse(localStorage.getItem("product_item"));
+        console.log(cart_data.length);
+        console.log(`div${id}`);
+        div.remove();
+        id--;
+        document.getElementById("counts").textContent = id;
+    }
+
+
+    
+
     var number_item=document.getElementById("no_of_item");
-    number_item.innerHTML=`Total item in cart:-${cart_data.length}`;
     var total_price=document.getElementById("total_price");
+    number_item.innerHTML=`Total Item in Cart - ${cart_data.length}`;
     total_price.innerHTML=`Total price of your cart is RS:-INR ${total}`;
 
     localStorage.setItem("total_price",JSON.stringify(total));
-
 
 </script>
