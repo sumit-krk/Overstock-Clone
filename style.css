@@ -456,9 +456,10 @@ body{
 .s_main{
     width: 100%;
     height: 300px;
-    margin: 200px auto;
-    overflow: hidden;
+    /* margin: 200px auto; */
+    /* overflow: hidden; */
     position: relative;
+
 }
 .s_h1{
     width: 90%;
