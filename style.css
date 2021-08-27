@@ -216,6 +216,24 @@ body{
     color: white;
 }
 
+#last-footer{
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    color: white;
+    font-size: .8rem;
+}
+
+#last-footer>div:last-child{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#last-footer>div:last-child>div{
+    margin-left: 1rem;
+}
+
 .signup_login{
     width: 40rem;
     height: 25;
