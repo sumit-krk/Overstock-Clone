@@ -180,6 +180,25 @@ body{
     color: black;
     font-size: .8rem;
 }
+
+#trending{
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    font-size: 1.2rem;
+    grid-gap: 1rem;
+    padding: 0rem 2rem;
+}
+#trending>div div{
+    background-color: rgb(221, 216, 216);
+    margin-top: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
+#trend_h1{
+    text-align: center;
+    font-size: 2rem;
+}
+
 .signup_login{
     width: 40rem;
     height: 25;
@@ -337,8 +356,7 @@ body{
 #fedex img{
     width: 100%;
 }
-#fedex>div:last-child{
-}
+
 #payment>div:nth-child(4){
     margin-top: 1rem;
     font-size: 1rem;
