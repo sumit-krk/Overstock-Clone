@@ -135,14 +135,22 @@
            pass_1:document.getElementById("password").value,
            conf_pass:document.getElementById("conf-password").value,
         };
-        log_sin.push(create_account);
-        document.getElementById("email").value="";
-        document.getElementById("password").value="";
-        document.getElementById("conf-password").value="";
+        if(create_account.email_1=="" || create_account.pass_1=="" || create_account.conf_pass=="")
+        {
+            alert("Enter valid details");
+        }
+        else
+        {
+            log_sin.push(create_account);
+
+            document.getElementById("email").value="";
+            document.getElementById("password").value="";
+            document.getElementById("conf-password").value="";
         
-        let signup=JSON.stringify(log_sin);
-        localStorage.setItem("sign_up_acc",signup)
-        alert("Account created sucessfuly");
+            let signup=JSON.stringify(log_sin);
+            localStorage.setItem("sign_up_acc",signup)
+            alert("Account created sucessfuly");
+        }
     };
 
     function sign_in()
@@ -161,19 +169,6 @@
                 flag=1;
                 break;
             }
-            // else if(id_and_pas[i].pass_1==pass_2)
-            // {
-            //     if(id_and_pas[i].email_1==email_2)
-            //     {
-            //         flag=1;
-            //         break;
-            //     }
-            //     else if(id_and_pas[i].email_1=email_2);
-            //     {
-            //         let show_err=document.getElementById("show_err");
-            //         show_err.innerHTML=`<b>Wrong Id / Password<b>`;
-            //     }  
-            // }
         }
         if(flag==1)
         {
