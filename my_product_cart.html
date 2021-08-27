@@ -97,6 +97,7 @@
     total=0;
     var id=1;
     cart_data.forEach(function(Product){
+        console.log(Product);
 
     let div=document.createElement("div");
     div.setAttribute("id",`div${id}`);
@@ -114,7 +115,7 @@
     let btn=document.createElement("button");
     btn.innerHTML="Remove"
     btn.setAttribute("id",`remove${id}`);
-    btn.setAttribute("onclick",`remove(${id})`);
+    btn.setAttribute("onclick",`remove(Product)`);
 
     div.append(P_image,p_name,p_price,btn);
     main_div.append(div);
@@ -124,15 +125,17 @@
 });
 
 
-function remove(id)
+function remove(p)
     {
-        var div=document.getElementById(`div${id}`);
-        let cart_data=JSON.parse(localStorage.getItem("product_item"));
-        console.log(cart_data.length);
-        console.log(`div${id}`);
-        div.remove();
-        id--;
-        document.getElementById("counts").textContent = id;
+        // var div=document.getElementById(`div${id}`);
+        // let cart_data=JSON.parse(localStorage.getItem("product_item"));
+        // console.log(cart_data.length);
+        // console.log(`div${id}`);
+        // div.remove();
+        // id--;
+        // document.getElementById("counts").textContent = id;
+        alert("function call");
+        console.log(p);
     }
 
 
