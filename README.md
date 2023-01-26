@@ -1,3 +1,4 @@
+![Capture_2](https://user-images.githubusercontent.com/88573250/214933579-5eecbd1d-961e-4e8f-8012-dd96a8f3c34c.PNG)
 
 ![Logo](https://github.com/sumit-krk/name/blob/master/overstock/Overstock_logo.PNG?raw=true)
 
